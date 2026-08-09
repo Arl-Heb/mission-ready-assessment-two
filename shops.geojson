@@ -1,0 +1,460 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6382,
+          -43.5248
+        ]
+      },
+      "properties": {
+        "id": "city-mission-barbadoes",
+        "name": "Christchurch City Mission Op Shop",
+        "address": "250 Barbadoes Street, Central City, Christchurch",
+        "hours": "Mon\u2013Sat 10am\u20134pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Furniture",
+          "Books"
+        ],
+        "source": "https://www.citymission.org.nz/op-shops"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.638,
+          -43.5472
+        ]
+      },
+      "properties": {
+        "id": "city-mission-sydenham",
+        "name": "Christchurch City Mission Op Shop \u2013 Sydenham",
+        "address": "63 Buchan Street, Sydenham, Christchurch",
+        "hours": "Mon\u2013Sat 10am\u20134pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Vintage",
+          "Books",
+          "Homewares"
+        ],
+        "source": "https://www.citymission.org.nz/op-shops"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6034,
+          -43.5022
+        ]
+      },
+      "properties": {
+        "id": "salvos-papanui",
+        "name": "Salvation Army Family Store \u2013 Papanui",
+        "address": "4 Restell Street, Papanui, Christchurch",
+        "hours": "Mon\u2013Sat 9am\u20134:30pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/papanui-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.596,
+          -43.5486
+        ]
+      },
+      "properties": {
+        "id": "salvos-addington",
+        "name": "Salvation Army Family Store \u2013 Addington",
+        "address": "359 Lincoln Road, Addington, Christchurch",
+        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/addington-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.659,
+          -43.5327
+        ]
+      },
+      "properties": {
+        "id": "salvos-linwood",
+        "name": "Salvation Army Family Store \u2013 Linwood",
+        "address": "173 Linwood Avenue, Linwood, Christchurch",
+        "hours": "Mon\u2013Sat 9am\u20134:30pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/linwood-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5675,
+          -43.5278
+        ]
+      },
+      "properties": {
+        "id": "salvos-riccarton",
+        "name": "Salvation Army Family Store \u2013 Riccarton",
+        "address": "359 Riccarton Road, Upper Riccarton, Christchurch",
+        "hours": "Mon\u2013Fri 9:30am\u20135pm; Sat 9:30am\u20134:30pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/riccarton-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5295,
+          -43.55
+        ]
+      },
+      "properties": {
+        "id": "salvos-hornby",
+        "name": "Salvation Army Family Store \u2013 Hornby",
+        "address": "1 Amyes Road, Hornby, Christchurch",
+        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/hornby-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.526,
+          -43.5585
+        ]
+      },
+      "properties": {
+        "id": "salvos-hornby-south",
+        "name": "Salvation Army Family Store \u2013 Hornby South",
+        "address": "1 Columbia Avenue, Hornby South, Christchurch",
+        "hours": "Mon\u2013Fri 9am\u20134:30pm; Sat 9:30am\u20131:30pm",
+        "categories": [
+          "Charity",
+          "Clothing"
+        ],
+        "source": "https://www.salvationarmy.org.nz/corps/hornby-community-ministries/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.663,
+          -43.5542
+        ]
+      },
+      "properties": {
+        "id": "salvos-woolston",
+        "name": "Salvation Army Family Store \u2013 Woolston",
+        "address": "636 Ferry Road, Woolston, Christchurch",
+        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/woolston-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6815,
+          -43.514
+        ]
+      },
+      "properties": {
+        "id": "salvos-aranui",
+        "name": "Salvation Army Family Store \u2013 Aranui",
+        "address": "34 Portsmouth Street, Aranui, Christchurch",
+        "hours": "Mon\u2013Fri 10am\u20132pm; Sat closed",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/aranui-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6507,
+          -43.5047
+        ]
+      },
+      "properties": {
+        "id": "salvos-shirley",
+        "name": "Salvation Army Family Store \u2013 Shirley",
+        "address": "204 Hills Road, Shirley, Christchurch",
+        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/shirley-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.626,
+          -43.5465
+        ]
+      },
+      "properties": {
+        "id": "salvos-sydenham",
+        "name": "Salvation Army Family Store \u2013 Sydenham",
+        "address": "156 Carlyle Street, Sydenham, Christchurch",
+        "hours": "Mon\u2013Sat 9am\u20134:30pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Furniture",
+          "Homewares",
+          "Books",
+          "Toys"
+        ],
+        "source": "https://www.salvationarmy.org.nz/location/sydenham-family-store/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.647,
+          -43.5205
+        ]
+      },
+      "properties": {
+        "id": "vinnies-stanmore",
+        "name": "Vinnies \u2013 Richmond",
+        "address": "265 Stanmore Road, Richmond, Christchurch",
+        "hours": "Mon\u2013Fri 9am\u20134pm; Sat 10am\u20133pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Books"
+        ],
+        "source": "https://www.svdpcanterbury.nz/contact/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.599,
+          -43.5
+        ]
+      },
+      "properties": {
+        "id": "vinnies-papanui",
+        "name": "Vinnies \u2013 Papanui",
+        "address": "19 Langdons Road, Papanui, Christchurch",
+        "hours": "Mon\u2013Fri 9am\u20134pm; Sat 10am\u20133pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Books"
+        ],
+        "source": "https://www.svdpcanterbury.nz/contact/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.529,
+          -43.5482
+        ]
+      },
+      "properties": {
+        "id": "vinnies-hornby",
+        "name": "Vinnies \u2013 Hornby",
+        "address": "31 Shands Road, Hornby, Christchurch",
+        "hours": "Mon\u2013Fri 9am\u20134pm; Sat 10am\u20133pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Books"
+        ],
+        "source": "https://www.svdpcanterbury.nz/contact/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6388,
+          -43.527
+        ]
+      },
+      "properties": {
+        "id": "vinnies-manchester",
+        "name": "Vinnies Concept Store \u2013 Central City",
+        "address": "35 Manchester Street, Christchurch",
+        "hours": "Mon\u2013Fri 10am\u20136pm; Sat 10am\u20133pm; Sun 11am\u20133pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Vintage",
+          "Homewares"
+        ],
+        "source": "https://www.svdpcanterbury.nz/donate-goods/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.625,
+          -43.5485
+        ]
+      },
+      "properties": {
+        "id": "spca-sydenham",
+        "name": "SPCA Op Shop \u2013 Furniture & Homeware",
+        "address": "428 Colombo Street, Sydenham, Christchurch",
+        "hours": "Daily 9am\u20135pm",
+        "categories": [
+          "Charity",
+          "Furniture",
+          "Homewares"
+        ],
+        "source": "https://www.spca.nz/opshops/sydenham-op-shop-furniture-homeware"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.725,
+          -43.507
+        ]
+      },
+      "properties": {
+        "id": "dogwatch",
+        "name": "Dogwatch Variety Shop",
+        "address": "90 Beresford Street, New Brighton, Christchurch",
+        "hours": "Mon\u2013Sat 10am\u20133pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Books",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://dogwatch.co.nz/support-us/dogwatch-variety-shop/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6285,
+          -43.546
+        ]
+      },
+      "properties": {
+        "id": "habitat-restore",
+        "name": "Habitat for Humanity ReStore \u2013 Sydenham",
+        "address": "189 Waltham Road, Sydenham, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Charity",
+          "Furniture",
+          "Homewares",
+          "Building"
+        ],
+        "source": "https://www.habitat.org.nz/restore"
+      }
+    }
+  ]
+}

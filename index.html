@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christchurch Op Shop Guide</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+/* Base page styles */
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#24332e;
+    background:#f7f5ef;
+    line-height:1.6;
+}
+/* Sticky top navigation */
+nav {
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 7%;
+    background:#173f35;
+    color:white;
+}
+.logo { font-weight:800; letter-spacing:.5px; }
+nav a { color:white; text-decoration:none; margin-left:22px; font-size:14px; }
+
+/* Hero banner: a video sits behind the text, with a gradient overlay
+   on top so the white text stays readable over the footage. */
+.hero {
+    position:relative;
+    overflow:hidden;
+    min-height:72vh;
+    display:flex;
+    align-items:center;
+    padding:80px 7%;
+    background-color:#173f35;
+    color:white;
+}
+.hero-video {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+}
+/* Gradient overlay, painted between the video and the text so the
+   video never fully drowns out the hero content. */
+.hero::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg, rgba(23,63,53,.85) 0%, rgba(40,100,82,.65) 60%, rgba(217,201,168,.35) 100%);
+    z-index:1;
+}
+.hero-content { position:relative; z-index:2; max-width:720px; }
+.eyebrow {
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:bold;
+    opacity:.85;
+}
+h1 { font-size:clamp(42px,7vw,78px); line-height:1.02; margin:15px 0 20px; }
+.hero p { font-size:19px; max-width:620px; opacity:.92; }
+.cta {
+    display:inline-block;
+    margin-top:20px;
+    padding:13px 20px;
+    border-radius:8px;
+    background:white;
+    color:#173f35;
+    text-decoration:none;
+    font-weight:bold;
+}
+/* Shared section spacing, headings and info cards */
+section { padding:80px 7%; }
+.section-heading { max-width:720px; margin-bottom:35px; }
+.section-heading h2 { font-size:38px; line-height:1.1; margin:8px 0 12px; }
+.about-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+.info-card {
+    padding:28px;
+    background:white;
+    border-radius:16px;
+    box-shadow:0 6px 25px rgba(0,0,0,.06);
+}
+/* Interactive map section */
+.map-section { background:#ece9df; }
+.map-controls {
+    background:white;
+    padding:15px;
+    border-radius:12px 12px 0 0;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+input, select, button {
+    padding:11px 13px;
+    border:1px solid #c7cbc7;
+    border-radius:8px;
+    font:inherit;
+}
+button {
+    background:#173f35;
+    color:white;
+    border-color:#173f35;
+    cursor:pointer;
+}
+#count { margin-left:auto; font-weight:bold; }
+.map-layout {
+    display:grid;
+    grid-template-columns:340px 1fr;
+    background:white;
+    border-radius:0 0 12px 12px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+#shopList { height:620px; overflow-y:auto; }
+.shop-card {
+    padding:15px;
+    border-bottom:1px solid #e7e7e7;
+    cursor:pointer;
+}
+.shop-card:hover { background:#f0f5f2; }
+.shop-card h3 { margin:0 0 4px; font-size:16px; }
+.shop-card p { margin:4px 0; font-size:13px; color:#5b6560; }
+.badge {
+    display:inline-block;
+    margin:4px 4px 0 0;
+    padding:3px 7px;
+    border-radius:99px;
+    background:#e4eee9;
+    font-size:11px;
+}
+.badge-today {
+    background:#286452;
+    color:white;
+    font-weight:bold;
+}
+#map { height:620px; }
+
+/* Tips section card grid */
+.feature-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+/* Footer */
+footer {
+    padding:35px 7%;
+    background:#173f35;
+    color:white;
+    text-align:center;
+}
+
+/* Responsive layout for tablet/mobile screens */
+@media(max-width:850px) {
+    nav div:last-child { display:none; }
+    .about-grid,.feature-grid,.map-layout { grid-template-columns:1fr; }
+    #shopList { height:300px; order:2; }
+    #map { height:500px; order:1; }
+    #count { width:100%; margin-left:0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Sticky navigation with links to each section -->
+<nav>
+    <div class="logo">CHCH OP SHOP GUIDE</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#map-section">Map</a>
+        <a href="#tips">Tips</a>
+    </div>
+</nav>
+
+<!-- Hero: first thing visitors see, sets up what the site is for -->
+<header class="hero">
+    <!-- autoplay requires muted (browser policy); playsinline stops it opening
+         fullscreen on mobile; poster shows while the video is still loading. -->
+    <!-- Footage: Toolkit, Christchurch NZ. Trimmed to the clip used here. -->
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/avon-hero.jpg">
+        <source src="images/avon-hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <div class="eyebrow">Christchurch • New Zealand</div>
+        <h1>Find your next op-shop treasure.</h1>
+        <p>
+            A simple guide to Christchurch charity shops, thrift stores and
+            second-hand treasures, helping you discover more places to browse,
+            reuse and find something unexpected.
+        </p>
+        <a class="cta" href="#map-section">Explore the map</a>
+    </div>
+</header>
+
+<!-- About: explains the idea behind the site before the map -->
+<section id="about">
+    <div class="section-heading">
+        <div class="eyebrow" style="color:#286452;">THE PROJECT</div>
+        <h2>A local guide to second-hand shopping.</h2>
+        <p>
+            Christchurch has op shops spread across the city. This project brings
+            them together in one easy-to-use interactive map so shoppers can find
+            stores near them and explore different types of second-hand goods.
+        </p>
+    </div>
+
+    <div class="about-grid">
+        <div class="info-card">
+            <h3>Why op shopping?</h3>
+            <p>
+                Op shopping can be a more affordable way to shop while giving
+                pre-loved clothing, furniture, books and household items another life.
+            </p>
+        </div>
+        <div class="info-card">
+            <h3>How to use the map</h3>
+            <p>
+                Search for a suburb or shop, filter by category, or click a shop
+                in the list. Selecting a result moves the map directly to its location.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive map: the main JavaScript feature of the site -->
+<section id="map-section" class="map-section">
+    <div class="section-heading">
+        <div class="eyebrow" style="color:#286452;">INTERACTIVE MAP</div>
+        <h2>Christchurch op shops</h2>
+        <p>Search, filter and explore the shops on the map.</p>
+    </div>
+
+    <!-- Search box plus category/day filters, all read by renderShops() in the script below -->
+    <div class="map-controls">
+        <input id="searchInput" type="search" placeholder="Search shops or suburbs...">
+        <select id="categoryFilter">
+            <option value="all">All categories</option>
+            <option>Charity</option>
+            <option>Clothing</option>
+            <option>Furniture</option>
+            <option>Homewares</option>
+            <option>Books</option>
+            <option>Vintage</option>
+            <option>Toys</option>
+            <option>Miscellaneous</option>
+            <option>Building</option>
+        </select>
+        <select id="dayFilter">
+            <option value="all">Any day</option>
+            <option value="Sun">Sunday</option>
+            <option value="Mon">Monday</option>
+            <option value="Tue">Tuesday</option>
+            <option value="Wed">Wednesday</option>
+            <option value="Thu">Thursday</option>
+            <option value="Fri">Friday</option>
+            <option value="Sat">Saturday</option>
+        </select>
+        <button id="todayButton" type="button">Open today</button>
+        <button id="resetButton">Reset</button>
+        <span id="count"></span>
+    </div>
+
+    <!-- Shop list (left) and Leaflet map (right); both are filled in by renderShops() -->
+    <div class="map-layout">
+        <aside id="shopList"></aside>
+        <div id="map"></div>
+    </div>
+</section>
+
+<!-- Tips: simple static content section -->
+<section id="tips">
+    <div class="section-heading">
+        <div class="eyebrow" style="color:#286452;">OP SHOPPING TIPS</div>
+        <h2>Make the most of your hunt.</h2>
+    </div>
+    <div class="feature-grid">
+        <div class="info-card">
+            <h3>Visit different suburbs</h3>
+            <p>Stock varies from store to store, so exploring different areas can uncover completely different finds.</p>
+        </div>
+        <div class="info-card">
+            <h3>Check back regularly</h3>
+            <p>Donations change constantly. A shop that was empty last week may have something great today.</p>
+        </div>
+        <div class="info-card">
+            <h3>Bring an open mind</h3>
+            <p>Look beyond the obvious. Books, furniture, homewares and unusual treasures can be just as rewarding as clothing.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <strong>Christchurch Op Shop Guide</strong>
+    <p>Mission 2: HTML, CSS & JavaScript</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// Op shop data: one object per shop, each with location, hours and categories.
+const shops = [{"id": "city-mission-barbadoes", "name": "Christchurch City Mission Op Shop", "address": "250 Barbadoes Street, Central City, Christchurch", "hours": "Mon–Sat 10am–4pm", "categories": ["Charity", "Clothing", "Homewares", "Furniture", "Books"], "lat": -43.5248, "lng": 172.6382, "source": "https://www.citymission.org.nz/op-shops"}, {"id": "city-mission-sydenham", "name": "Christchurch City Mission Op Shop – Sydenham", "address": "63 Buchan Street, Sydenham, Christchurch", "hours": "Mon–Sat 10am–4pm", "categories": ["Charity", "Clothing", "Vintage", "Books", "Homewares"], "lat": -43.5472, "lng": 172.638, "source": "https://www.citymission.org.nz/op-shops"}, {"id": "salvos-papanui", "name": "Salvation Army Family Store – Papanui", "address": "4 Restell Street, Papanui, Christchurch", "hours": "Mon–Sat 9am–4:30pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.5022, "lng": 172.6034, "source": "https://www.salvationarmy.org.nz/location/papanui-family-store/"}, {"id": "salvos-addington", "name": "Salvation Army Family Store – Addington", "address": "359 Lincoln Road, Addington, Christchurch", "hours": "Mon–Sat 9am–5pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.5486, "lng": 172.596, "source": "https://www.salvationarmy.org.nz/location/addington-family-store/"}, {"id": "salvos-linwood", "name": "Salvation Army Family Store – Linwood", "address": "173 Linwood Avenue, Linwood, Christchurch", "hours": "Mon–Sat 9am–4:30pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.5327, "lng": 172.659, "source": "https://www.salvationarmy.org.nz/location/linwood-family-store/"}, {"id": "salvos-riccarton", "name": "Salvation Army Family Store – Riccarton", "address": "359 Riccarton Road, Upper Riccarton, Christchurch", "hours": "Mon–Fri 9:30am–5pm; Sat 9:30am–4:30pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.5278, "lng": 172.5675, "source": "https://www.salvationarmy.org.nz/location/riccarton-family-store/"}, {"id": "salvos-hornby", "name": "Salvation Army Family Store – Hornby", "address": "1 Amyes Road, Hornby, Christchurch", "hours": "Mon–Sat 9am–5pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.55, "lng": 172.5295, "source": "https://www.salvationarmy.org.nz/location/hornby-family-store/"}, {"id": "salvos-hornby-south", "name": "Salvation Army Family Store – Hornby South", "address": "1 Columbia Avenue, Hornby South, Christchurch", "hours": "Mon–Fri 9am–4:30pm; Sat 9:30am–1:30pm", "categories": ["Charity", "Clothing"], "lat": -43.5585, "lng": 172.526, "source": "https://www.salvationarmy.org.nz/corps/hornby-community-ministries/"}, {"id": "salvos-woolston", "name": "Salvation Army Family Store – Woolston", "address": "636 Ferry Road, Woolston, Christchurch", "hours": "Mon–Sat 9am–5pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.5542, "lng": 172.663, "source": "https://www.salvationarmy.org.nz/location/woolston-family-store/"}, {"id": "salvos-aranui", "name": "Salvation Army Family Store – Aranui", "address": "34 Portsmouth Street, Aranui, Christchurch", "hours": "Mon–Fri 10am–2pm; Sat closed", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.514, "lng": 172.6815, "source": "https://www.salvationarmy.org.nz/location/aranui-family-store/"}, {"id": "salvos-shirley", "name": "Salvation Army Family Store – Shirley", "address": "204 Hills Road, Shirley, Christchurch", "hours": "Mon–Sat 9am–5pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.5047, "lng": 172.6507, "source": "https://www.salvationarmy.org.nz/location/shirley-family-store/"}, {"id": "salvos-sydenham", "name": "Salvation Army Family Store – Sydenham", "address": "156 Carlyle Street, Sydenham, Christchurch", "hours": "Mon–Sat 9am–4:30pm", "categories": ["Charity", "Clothing", "Furniture", "Homewares", "Books", "Toys"], "lat": -43.5465, "lng": 172.626, "source": "https://www.salvationarmy.org.nz/location/sydenham-family-store/"}, {"id": "vinnies-stanmore", "name": "Vinnies – Richmond", "address": "265 Stanmore Road, Richmond, Christchurch", "hours": "Mon–Fri 9am–4pm; Sat 10am–3pm", "categories": ["Charity", "Clothing", "Homewares", "Books"], "lat": -43.5205, "lng": 172.647, "source": "https://www.svdpcanterbury.nz/contact/"}, {"id": "vinnies-papanui", "name": "Vinnies – Papanui", "address": "19 Langdons Road, Papanui, Christchurch", "hours": "Mon–Fri 9am–4pm; Sat 10am–3pm", "categories": ["Charity", "Clothing", "Homewares", "Books"], "lat": -43.5, "lng": 172.599, "source": "https://www.svdpcanterbury.nz/contact/"}, {"id": "vinnies-hornby", "name": "Vinnies – Hornby", "address": "31 Shands Road, Hornby, Christchurch", "hours": "Mon–Fri 9am–4pm; Sat 10am–3pm", "categories": ["Charity", "Clothing", "Homewares", "Books"], "lat": -43.5482, "lng": 172.529, "source": "https://www.svdpcanterbury.nz/contact/"}, {"id": "vinnies-manchester", "name": "Vinnies Concept Store – Central City", "address": "35 Manchester Street, Christchurch", "hours": "Mon–Fri 10am–6pm; Sat 10am–3pm; Sun 11am–3pm", "categories": ["Charity", "Clothing", "Vintage", "Homewares"], "lat": -43.527, "lng": 172.6388, "source": "https://www.svdpcanterbury.nz/donate-goods/"}, {"id": "spca-sydenham", "name": "SPCA Op Shop – Furniture & Homeware", "address": "428 Colombo Street, Sydenham, Christchurch", "hours": "Daily 9am–5pm", "categories": ["Charity", "Furniture", "Homewares"], "lat": -43.5485, "lng": 172.625, "source": "https://www.spca.nz/opshops/sydenham-op-shop-furniture-homeware"}, {"id": "dogwatch", "name": "Dogwatch Variety Shop", "address": "90 Beresford Street, New Brighton, Christchurch", "hours": "Mon–Sat 10am–3pm", "categories": ["Charity", "Clothing", "Books", "Homewares", "Miscellaneous"], "lat": -43.507, "lng": 172.725, "source": "https://dogwatch.co.nz/support-us/dogwatch-variety-shop/"}, {"id": "habitat-restore", "name": "Habitat for Humanity ReStore – Sydenham", "address": "189 Waltham Road, Sydenham, Christchurch", "hours": "Check current hours before visiting", "categories": ["Charity", "Furniture", "Homewares", "Building"], "lat": -43.546, "lng": 172.6285, "source": "https://www.habitat.org.nz/restore"}];
+
+// Day abbreviations in week order. This order matches Date.getDay(),
+// where Sunday = 0, so it can also be used to look up "today".
+const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAY_TOKEN = /(Sun|Mon|Tue|Wed|Thu|Fri|Sat)/;
+
+// Turn a free-text hours string (e.g. "Mon–Fri 9am–4:30pm; Sat 10am–3pm")
+// into an array of the day abbreviations a shop is open on.
+function parseOpenDays(hoursText) {
+    if (/daily/i.test(hoursText)) {
+        return [...WEEKDAYS];
+    }
+
+    const openDays = [];
+
+    // Shops can list several clauses separated by semicolons,
+    // e.g. "Mon–Fri 9am–4:30pm; Sat 10am–3pm; Sun 11am–3pm".
+    const clauses = hoursText.split(';');
+
+    clauses.forEach(clause => {
+        // Skip clauses that explicitly say a day is closed.
+        if (/closed/i.test(clause)) return;
+
+        const rangePattern = new RegExp(DAY_TOKEN.source + '\\s*[–-]\\s*' + DAY_TOKEN.source);
+        const rangeMatch = clause.match(rangePattern);
+
+        if (rangeMatch) {
+            const start = WEEKDAYS.indexOf(rangeMatch[1]);
+            const end = WEEKDAYS.indexOf(rangeMatch[2]);
+
+            // Step through the range day by day. The % 7 wraps the index
+            // back to Sunday in case a range ever crosses the end of the week.
+            for (let i = start; i !== end; i = (i + 1) % 7) {
+                openDays.push(WEEKDAYS[i]);
+            }
+            openDays.push(WEEKDAYS[end]);
+        } else {
+            const singleMatch = clause.match(DAY_TOKEN);
+            if (singleMatch) openDays.push(singleMatch[1]);
+        }
+    });
+
+    // Remove any duplicate days picked up across clauses.
+    return [...new Set(openDays)];
+}
+
+// Work out each shop's open days once up front, rather than
+// re-parsing the hours text every time the filters are applied.
+shops.forEach(shop => {
+    shop.openDays = parseOpenDays(shop.hours);
+});
+
+const todayAbbrev = WEEKDAYS[new Date().getDay()];
+
+const map = L.map('map').setView([-43.532, 172.636], 12);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+const markerLayer = L.layerGroup().addTo(map);
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+const dayFilter = document.getElementById('dayFilter');
+const todayButton = document.getElementById('todayButton');
+const resetButton = document.getElementById('resetButton');
+const shopList = document.getElementById('shopList');
+const count = document.getElementById('count');
+
+// Build the HTML shown inside a marker's popup when it's clicked on the map.
+function createPopup(shop) {
+    const tags = shop.categories
+        .map(category => `<span class="badge">${category}</span>`)
+        .join('');
+
+    const directions =
+        `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shop.address)}`;
+
+    return `<div>
+        <h3>${shop.name}</h3>
+        <p><strong>Address:</strong> ${shop.address}</p>
+        <p><strong>Hours:</strong> ${shop.hours}</p>
+        <div>${tags}</div>
+        <a href="${directions}" target="_blank" rel="noopener">Get directions</a>
+    </div>`;
+}
+
+// Re-reads the search box, category filter and day filter, then rebuilds
+// the map markers and shop list to match. Called on load and on every
+// filter change, so it's the single source of truth for what's visible.
+function renderShops() {
+    markerLayer.clearLayers();
+    shopList.innerHTML = '';
+
+    const search = searchInput.value.toLowerCase().trim();
+    const category = categoryFilter.value;
+    const day = dayFilter.value;
+    let visible = 0;
+
+    shops.forEach(shop => {
+        const searchable =
+            (shop.name + ' ' + shop.address + ' ' + shop.categories.join(' ')).toLowerCase();
+
+        const matchesSearch = searchable.includes(search);
+        const matchesCategory =
+            category === 'all' || shop.categories.includes(category);
+        const matchesDay =
+            day === 'all' || shop.openDays.includes(day);
+
+        if (matchesSearch && matchesCategory && matchesDay) {
+            visible++;
+
+            const marker = L.marker([shop.lat, shop.lng]).addTo(markerLayer);
+            marker.bindPopup(createPopup(shop));
+
+            const card = document.createElement('article');
+            card.className = 'shop-card';
+
+            const openTodayBadge = shop.openDays.includes(todayAbbrev)
+                ? '<span class="badge badge-today">Open today</span>'
+                : '';
+
+            card.innerHTML = `
+                <h3>${shop.name}</h3>
+                <p>${shop.address}</p>
+                <p><strong>${shop.hours}</strong></p>
+                <div>${openTodayBadge}${
+                    shop.categories
+                        .map(c => `<span class="badge">${c}</span>`)
+                        .join('')
+                }</div>
+            `;
+
+            card.addEventListener('click', () => {
+                map.flyTo([shop.lat, shop.lng], 15);
+                marker.openPopup();
+            });
+
+            shopList.appendChild(card);
+        }
+    });
+
+    count.textContent = `${visible} of ${shops.length} shops`;
+}
+
+searchInput.addEventListener('input', renderShops);
+categoryFilter.addEventListener('change', renderShops);
+dayFilter.addEventListener('change', renderShops);
+
+todayButton.addEventListener('click', () => {
+    dayFilter.value = todayAbbrev;
+    renderShops();
+});
+
+resetButton.addEventListener('click', () => {
+    searchInput.value = '';
+    categoryFilter.value = 'all';
+    dayFilter.value = 'all';
+    renderShops();
+    map.setView([-43.532, 172.636], 12);
+});
+
+renderShops();
+</script>
+</body>
+</html>
