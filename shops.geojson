@@ -14,7 +14,7 @@
         "id": "city-mission-barbadoes",
         "name": "Christchurch City Mission Op Shop",
         "address": "250 Barbadoes Street, Central City, Christchurch",
-        "hours": "Mon\u2013Sat 10am\u20134pm",
+        "hours": "Mon–Sat 10am–4pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -36,9 +36,9 @@
       },
       "properties": {
         "id": "city-mission-sydenham",
-        "name": "Christchurch City Mission Op Shop \u2013 Sydenham",
+        "name": "Christchurch City Mission Op Shop – Sydenham",
         "address": "63 Buchan Street, Sydenham, Christchurch",
-        "hours": "Mon\u2013Sat 10am\u20134pm",
+        "hours": "Mon–Sat 10am–4pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -60,9 +60,9 @@
       },
       "properties": {
         "id": "salvos-papanui",
-        "name": "Salvation Army Family Store \u2013 Papanui",
+        "name": "Salvation Army Family Store – Papanui",
         "address": "4 Restell Street, Papanui, Christchurch",
-        "hours": "Mon\u2013Sat 9am\u20134:30pm",
+        "hours": "Mon–Sat 9am–4:30pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -85,9 +85,9 @@
       },
       "properties": {
         "id": "salvos-addington",
-        "name": "Salvation Army Family Store \u2013 Addington",
+        "name": "Salvation Army Family Store – Addington",
         "address": "359 Lincoln Road, Addington, Christchurch",
-        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "hours": "Mon–Sat 9am–5pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -110,9 +110,9 @@
       },
       "properties": {
         "id": "salvos-linwood",
-        "name": "Salvation Army Family Store \u2013 Linwood",
+        "name": "Salvation Army Family Store – Linwood",
         "address": "173 Linwood Avenue, Linwood, Christchurch",
-        "hours": "Mon\u2013Sat 9am\u20134:30pm",
+        "hours": "Mon–Sat 9am–4:30pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -135,9 +135,9 @@
       },
       "properties": {
         "id": "salvos-riccarton",
-        "name": "Salvation Army Family Store \u2013 Riccarton",
+        "name": "Salvation Army Family Store – Riccarton",
         "address": "359 Riccarton Road, Upper Riccarton, Christchurch",
-        "hours": "Mon\u2013Fri 9:30am\u20135pm; Sat 9:30am\u20134:30pm",
+        "hours": "Mon–Fri 9:30am–5pm; Sat 9:30am–4:30pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -160,9 +160,9 @@
       },
       "properties": {
         "id": "salvos-hornby",
-        "name": "Salvation Army Family Store \u2013 Hornby",
+        "name": "Salvation Army Family Store – Hornby",
         "address": "1 Amyes Road, Hornby, Christchurch",
-        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "hours": "Mon–Sat 9am–5pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -185,9 +185,9 @@
       },
       "properties": {
         "id": "salvos-hornby-south",
-        "name": "Salvation Army Family Store \u2013 Hornby South",
+        "name": "Salvation Army Family Store – Hornby South",
         "address": "1 Columbia Avenue, Hornby South, Christchurch",
-        "hours": "Mon\u2013Fri 9am\u20134:30pm; Sat 9:30am\u20131:30pm",
+        "hours": "Mon–Fri 9am–4:30pm; Sat 9:30am–1:30pm",
         "categories": [
           "Charity",
           "Clothing"
@@ -200,15 +200,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          172.663,
-          -43.5542
+          172.6838,
+          -43.55
         ]
       },
       "properties": {
         "id": "salvos-woolston",
-        "name": "Salvation Army Family Store \u2013 Woolston",
+        "name": "Salvation Army Family Store – Woolston",
         "address": "636 Ferry Road, Woolston, Christchurch",
-        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "hours": "Mon–Sat 9am–5pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -231,9 +231,9 @@
       },
       "properties": {
         "id": "salvos-aranui",
-        "name": "Salvation Army Family Store \u2013 Aranui",
+        "name": "Salvation Army Family Store – Aranui",
         "address": "34 Portsmouth Street, Aranui, Christchurch",
-        "hours": "Mon\u2013Fri 10am\u20132pm; Sat closed",
+        "hours": "Mon–Fri 10am–2pm; Sat closed",
         "categories": [
           "Charity",
           "Clothing",
@@ -256,9 +256,9 @@
       },
       "properties": {
         "id": "salvos-shirley",
-        "name": "Salvation Army Family Store \u2013 Shirley",
+        "name": "Salvation Army Family Store – Shirley",
         "address": "204 Hills Road, Shirley, Christchurch",
-        "hours": "Mon\u2013Sat 9am\u20135pm",
+        "hours": "Mon–Sat 9am–5pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -281,9 +281,9 @@
       },
       "properties": {
         "id": "salvos-sydenham",
-        "name": "Salvation Army Family Store \u2013 Sydenham",
+        "name": "Salvation Army Family Store – Sydenham",
         "address": "156 Carlyle Street, Sydenham, Christchurch",
-        "hours": "Mon\u2013Sat 9am\u20134:30pm",
+        "hours": "Mon–Sat 9am–4:30pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -306,9 +306,9 @@
       },
       "properties": {
         "id": "vinnies-stanmore",
-        "name": "Vinnies \u2013 Richmond",
+        "name": "Vinnies – Richmond",
         "address": "265 Stanmore Road, Richmond, Christchurch",
-        "hours": "Mon\u2013Fri 9am\u20134pm; Sat 10am\u20133pm",
+        "hours": "Mon–Fri 9am–4pm; Sat 10am–3pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -329,9 +329,9 @@
       },
       "properties": {
         "id": "vinnies-papanui",
-        "name": "Vinnies \u2013 Papanui",
+        "name": "Vinnies – Papanui",
         "address": "19 Langdons Road, Papanui, Christchurch",
-        "hours": "Mon\u2013Fri 9am\u20134pm; Sat 10am\u20133pm",
+        "hours": "Mon–Fri 9am–4pm; Sat 10am–3pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -352,9 +352,9 @@
       },
       "properties": {
         "id": "vinnies-hornby",
-        "name": "Vinnies \u2013 Hornby",
+        "name": "Vinnies – Hornby",
         "address": "31 Shands Road, Hornby, Christchurch",
-        "hours": "Mon\u2013Fri 9am\u20134pm; Sat 10am\u20133pm",
+        "hours": "Mon–Fri 9am–4pm; Sat 10am–3pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -375,9 +375,9 @@
       },
       "properties": {
         "id": "vinnies-manchester",
-        "name": "Vinnies Concept Store \u2013 Central City",
+        "name": "Vinnies Concept Store – Central City",
         "address": "35 Manchester Street, Christchurch",
-        "hours": "Mon\u2013Fri 10am\u20136pm; Sat 10am\u20133pm; Sun 11am\u20133pm",
+        "hours": "Mon–Fri 10am–6pm; Sat 10am–3pm; Sun 11am–3pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -398,9 +398,9 @@
       },
       "properties": {
         "id": "spca-sydenham",
-        "name": "SPCA Op Shop \u2013 Furniture & Homeware",
+        "name": "SPCA Op Shop – Furniture & Homeware",
         "address": "428 Colombo Street, Sydenham, Christchurch",
-        "hours": "Daily 9am\u20135pm",
+        "hours": "Daily 9am–5pm",
         "categories": [
           "Charity",
           "Furniture",
@@ -422,7 +422,7 @@
         "id": "dogwatch",
         "name": "Dogwatch Variety Shop",
         "address": "90 Beresford Street, New Brighton, Christchurch",
-        "hours": "Mon\u2013Sat 10am\u20133pm",
+        "hours": "Mon–Sat 10am–3pm",
         "categories": [
           "Charity",
           "Clothing",
@@ -444,7 +444,7 @@
       },
       "properties": {
         "id": "habitat-restore",
-        "name": "Habitat for Humanity ReStore \u2013 Sydenham",
+        "name": "Habitat for Humanity ReStore – Sydenham",
         "address": "189 Waltham Road, Sydenham, Christchurch",
         "hours": "Check current hours before visiting",
         "categories": [
@@ -454,6 +454,917 @@
           "Building"
         ],
         "source": "https://www.habitat.org.nz/restore"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6407,
+          -43.5361
+        ]
+      },
+      "properties": {
+        "id": "paperbag-princess-st-asaph",
+        "name": "Paperbag Princess",
+        "address": "255 St Asaph Street, Christchurch Central, Christchurch",
+        "hours": "Mon–Tue 10am–5pm, Wed–Sat 10am–5:30pm, Sun 11am–4pm",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://www.paperbagprincess.co.nz/stores"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6415,
+          -43.5364
+        ]
+      },
+      "properties": {
+        "id": "booteek-st-asaph",
+        "name": "Booteek",
+        "address": "266 St Asaph Street, Christchurch Central, Christchurch",
+        "hours": "Mon–Sat 10am–4pm, Sun 11am–3pm",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://evendo.com/locations/new-zealand/christchurch/shop/booteek"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6378,
+          -43.5326
+        ]
+      },
+      "properties": {
+        "id": "recycle-boutique-high-st",
+        "name": "Recycle Boutique",
+        "address": "248 High Street, Christchurch Central, Christchurch",
+        "hours": "Mon–Wed 10am–5:30pm, Thu–Fri 10am–6pm, Sat–Sun 10am–5pm",
+        "categories": [
+          "Clothing",
+          "Vintage",
+          "Miscellaneous"
+        ],
+        "source": "https://www.recycleboutique.co.nz/stores/christchurch-city"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6477,
+          -43.5332
+        ]
+      },
+      "properties": {
+        "id": "nifty-cashel-st",
+        "name": "Nifty",
+        "address": "306 Cashel Street, Christchurch Central, Christchurch",
+        "hours": "Tue–Fri 10am–5:30pm, Sat 10am–5pm, Sun 11am–4pm, closed Mon",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://niftymarkets.co.nz/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6353,
+          -43.5334
+        ]
+      },
+      "properties": {
+        "id": "curb-cashel-st",
+        "name": "Curb",
+        "address": "118 Cashel Street, Christchurch Central, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Clothing",
+          "Vintage",
+          "Miscellaneous"
+        ],
+        "source": "https://www.curb.co.nz/pages/contact-us"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6365,
+          -43.5435
+        ]
+      },
+      "properties": {
+        "id": "flourish-colombo-st",
+        "name": "Flourish",
+        "address": "445 Colombo Street, Sydenham, Christchurch",
+        "hours": "Mon–Fri 9:30am–4pm, Sat 10am–2pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Toys"
+        ],
+        "source": "https://opshops.co/op-shops/flourish-op-shop/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6353,
+          -43.5434
+        ]
+      },
+      "properties": {
+        "id": "savemart-battersea-st",
+        "name": "SaveMart",
+        "address": "39 Battersea Street, Sydenham, Christchurch",
+        "hours": "Tue–Sun 10am–4pm, closed Mon",
+        "categories": [
+          "Clothing",
+          "Vintage",
+          "Miscellaneous"
+        ],
+        "source": "https://www.savemart.co.nz/locations"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.622,
+          -43.5487
+        ]
+      },
+      "properties": {
+        "id": "style-me-selwyn-st",
+        "name": "Style Me",
+        "address": "304 Selwyn Street, Spreydon, Christchurch",
+        "hours": "Mon–Fri 10am–5pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Clothing",
+          "Vintage",
+          "Miscellaneous"
+        ],
+        "source": "https://treasurehunting.co.nz/listing/style-me/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6399,
+          -43.5224
+        ]
+      },
+      "properties": {
+        "id": "red-cross-manchester-st",
+        "name": "Red Cross Shop",
+        "address": "334 Manchester Street, Christchurch Central, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Furniture"
+        ],
+        "source": "https://charityshopsnz.one/canterbury/charity-shops-christchurch/red-cross-shop-christchurch-manchester-street/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6339,
+          -43.5372
+        ]
+      },
+      "properties": {
+        "id": "st-john-durham-st",
+        "name": "St John Opportunity Shop",
+        "address": "180 Durham Street South, Christchurch Central, Christchurch",
+        "hours": "Mon–Fri 9:30am–4:30pm, closed Sat–Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Books",
+          "Miscellaneous"
+        ],
+        "source": "https://www.stjohn.org.nz/shop/retail-stores/christchurch-durham-street/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6373,
+          -43.5494
+        ]
+      },
+      "properties": {
+        "id": "st-john-colombo-st",
+        "name": "St John Opportunity Shop",
+        "address": "300 Colombo Street, Sydenham, Christchurch",
+        "hours": "Mon–Fri 9:30am–5pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Books"
+        ],
+        "source": "https://www.stjohn.org.nz/shop/retail-stores/christchurch-sydenham/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6367,
+          -43.557
+        ]
+      },
+      "properties": {
+        "id": "nurse-maude-colombo-st",
+        "name": "Nurse Maude Hospice Shop",
+        "address": "147 Colombo Street, Beckenham, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.nursemaude.org.nz/contact-us"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5257,
+          -43.5449
+        ]
+      },
+      "properties": {
+        "id": "red-cross-hornby",
+        "name": "Red Cross Shop – Hornby",
+        "address": "Shop 3, 1 Amyes Road, Hornby, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Books"
+        ],
+        "source": "https://charityshopsnz.one/canterbury/charity-shops-selwyn-district/red-cross-shop-hornby/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5257,
+          -43.5449
+        ]
+      },
+      "properties": {
+        "id": "spca-hornby",
+        "name": "SPCA Op Shop – Hornby",
+        "address": "Shop 4, 1 Amyes Road, Hornby, Christchurch",
+        "hours": "Mon–Sun 9am–5pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.spca.nz/opshops/hornby-op-shop"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5177,
+          -43.5498
+        ]
+      },
+      "properties": {
+        "id": "savemart-hornby",
+        "name": "SaveMart – Hornby",
+        "address": "94 Shands Road, Hornby South, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Clothing",
+          "Vintage",
+          "Miscellaneous"
+        ],
+        "source": "https://opshopdirectory.co.nz/savemart-hornby/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5856,
+          -43.5393
+        ]
+      },
+      "properties": {
+        "id": "spca-riccarton",
+        "name": "SPCA Op Shop – Riccarton",
+        "address": "52 Acheron Drive, Riccarton, Christchurch",
+        "hours": "Mon–Sun 9am–5pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.spca.nz/opshops/riccarton-op-shop"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6104,
+          -43.5445
+        ]
+      },
+      "properties": {
+        "id": "st-john-lincoln-rd",
+        "name": "St John Opportunity Shop – Lincoln Road",
+        "address": "272 Lincoln Road, Addington, Christchurch",
+        "hours": "Mon–Fri 9am–5pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Books"
+        ],
+        "source": "https://www.stjohn.org.nz/shop/retail-stores/christchurch-addington/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6742,
+          -43.5139
+        ]
+      },
+      "properties": {
+        "id": "window-of-opportunity-dallington",
+        "name": "Window of Opportunity",
+        "address": "148 Gayhurst Road, Dallington, Christchurch",
+        "hours": "Wed–Fri 10am–2pm, Sat 10am–1pm, closed Sun–Tue",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.instagram.com/window_of_opportunity_opshop/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6822,
+          -43.5484
+        ]
+      },
+      "properties": {
+        "id": "red-cross-woolston",
+        "name": "Red Cross Shop – Woolston",
+        "address": "6/8 Portman Street, Woolston, Christchurch",
+        "hours": "Mon–Fri 9am–5pm, Sat 10am–4pm, Sun 10am–3pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Furniture"
+        ],
+        "source": "https://opshopdirectory.co.nz/red-cross-shop-christchurch-woolston/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6732,
+          -43.5339
+        ]
+      },
+      "properties": {
+        "id": "spca-linwood",
+        "name": "SPCA Op Shop – Linwood",
+        "address": "244 Linwood Avenue, Linwood, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Toys"
+        ],
+        "source": "https://www.spca.nz/opshops/linwood-op-shop"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6379,
+          -43.5136
+        ]
+      },
+      "properties": {
+        "id": "st-john-edgeware",
+        "name": "St John Opportunity Shop – Edgeware",
+        "address": "74 Edgeware Road, St Albans, Christchurch",
+        "hours": "Mon–Fri 9:30am–5pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares"
+        ],
+        "source": "https://www.stjohn.org.nz/shop/retail-stores/christchurch-edgeware/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6651,
+          -43.5424
+        ]
+      },
+      "properties": {
+        "id": "st-john-ferry-road",
+        "name": "St John Opportunity Shop – Ferry Road",
+        "address": "375 Ferry Road, Waltham, Christchurch",
+        "hours": "Mon–Fri 9:30am–5pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares"
+        ],
+        "source": "https://www.stjohn.org.nz/shop/retail-stores/christchurch-ferry-road/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7039,
+          -43.5576
+        ]
+      },
+      "properties": {
+        "id": "to-be-continued-ferrymead",
+        "name": "To Be Continued Preloved Clothing",
+        "address": "1027 Ferry Road, Ferrymead, Christchurch",
+        "hours": "Wed–Fri 10am–4pm, Sat–Sun 10am–5pm, closed Mon–Tue in winter",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://tobecontinuedpreloved.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6655,
+          -43.5434
+        ]
+      },
+      "properties": {
+        "id": "woolston-emporium",
+        "name": "The Woolston Emporium",
+        "address": "200 Ensors Road, Woolston, Christchurch",
+        "hours": "Thu–Sun 10am–4pm, closed Mon–Wed",
+        "categories": [
+          "Vintage",
+          "Furniture",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.thewoolstonemporium.co.nz/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6655,
+          -43.5434
+        ]
+      },
+      "properties": {
+        "id": "junk-and-disorderly-woolston",
+        "name": "Junk & Disorderly",
+        "address": "200 Ensors Road, Woolston, Christchurch",
+        "hours": "Wed–Sun 10am–4pm, closed Mon–Tue",
+        "categories": [
+          "Furniture",
+          "Homewares",
+          "Vintage"
+        ],
+        "source": "https://www.wisemove.co.nz/post/the-best-furniture-and-home-decor-stores-in-christchurch"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6803,
+          -43.5576
+        ]
+      },
+      "properties": {
+        "id": "recycle-boutique-tannery",
+        "name": "Recycle Boutique – The Tannery",
+        "address": "3 Garlands Road, Woolston, Christchurch",
+        "hours": "Mon–Fri 9:30am–5:30pm, Sat–Sun 10am–5pm",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://thetannery.co.nz/stores/fashion/recycle-boutique/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7598,
+          -43.5698
+        ]
+      },
+      "properties": {
+        "id": "time-and-time-again-sumner",
+        "name": "Time and Time Again",
+        "address": "Shop 2/43 Nayland Street, Sumner, Christchurch",
+        "hours": "Open 7 days, 10am–5pm",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://timeandtimeagain.nz/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7582,
+          -43.5678
+        ]
+      },
+      "properties": {
+        "id": "nurse-maude-sumner",
+        "name": "Nurse Maude Hospice Shop – Sumner",
+        "address": "25C Marriner Street, Sumner, Christchurch",
+        "hours": "Daily 9:30am–5pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares"
+        ],
+        "source": "https://www.facebook.com/NurseMaudeHospiceShop/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7051,
+          -43.559
+        ]
+      },
+      "properties": {
+        "id": "toffs-ferrymead",
+        "name": "Toffs",
+        "address": "7 Settlers Crescent, Ferrymead, Christchurch",
+        "hours": "Mon–Sat 9am–6pm, closed Sun",
+        "categories": [
+          "Clothing"
+        ],
+        "source": "https://yellow.co.nz/y/toffs-ferrymead"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7236,
+          -43.6016
+        ]
+      },
+      "properties": {
+        "id": "lyttelton-garage-sale",
+        "name": "The Garage Sale (Lyttelton)",
+        "address": "54A Oxford Street, Lyttelton, Christchurch",
+        "hours": "Wed–Fri 10am–4pm, Sat 10:30am–1pm, closed Sun–Tue",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.lyttelton.net.nz/garage-sales"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.7212,
+          -43.6027
+        ]
+      },
+      "properties": {
+        "id": "london-street-vintage-lyttelton",
+        "name": "London Street Vintage",
+        "address": "31 London Street, Lyttelton, Christchurch",
+        "hours": "Daily 10am–4pm",
+        "categories": [
+          "Vintage",
+          "Clothing",
+          "Miscellaneous"
+        ],
+        "source": "https://www.lytteltoninfocentre.nz/london-street-vintage-clothing-more"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5894,
+          -43.5089
+        ]
+      },
+      "properties": {
+        "id": "thrive-ilam",
+        "name": "Thrive Op Shop (Christchurch City Mission)",
+        "address": "405 Ilam Road, Bryndwr, Christchurch",
+        "hours": "Mon–Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://opshopdirectory.co.nz/thrive-op-shop-christchurch-city-mission-bryndwr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5894,
+          -43.5089
+        ]
+      },
+      "properties": {
+        "id": "st-john-ilam",
+        "name": "St John Opportunity Shop – Ilam Road",
+        "address": "407 Ilam Road, Bryndwr, Christchurch",
+        "hours": "Mon–Fri 9:30am–5pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.stjohn.org.nz/shop/retail-stores/christchurch-fendalton/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6236,
+          -43.4896
+        ]
+      },
+      "properties": {
+        "id": "savemart-cranford",
+        "name": "SaveMart – Cranford Street",
+        "address": "472 Cranford Street, Redwood, Christchurch",
+        "hours": "Tue–Sun 10am–4pm, closed Mon",
+        "categories": [
+          "Clothing",
+          "Vintage",
+          "Miscellaneous"
+        ],
+        "source": "https://opshopdirectory.co.nz/savemart-papanui/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5717,
+          -43.5166
+        ]
+      },
+      "properties": {
+        "id": "paperbag-princess-waimairi",
+        "name": "Paperbag Princess",
+        "address": "203A Waimairi Road, Ilam, Christchurch",
+        "hours": "Mon–Fri 10am–5pm, Sat 9:30am–3pm, closed Sun",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://www.paperbagprincess.co.nz/stores"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6223,
+          -43.5124
+        ]
+      },
+      "properties": {
+        "id": "nurse-maude-papanui-rd",
+        "name": "Nurse Maude Hospice Shop – Papanui Road",
+        "address": "186 Papanui Road, Merivale, Christchurch",
+        "hours": "Mon–Fri 9:30am–5pm, Sat–Sun 10am–4pm",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://treasurehunting.co.nz/listing/nurse-maude-hospice-shop-merivale/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6089,
+          -43.4955
+        ]
+      },
+      "properties": {
+        "id": "spca-main-north-rd",
+        "name": "SPCA Op Shop – Main North Road",
+        "address": "30 Main North Road, Papanui, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.spca.nz/opshops/papanui-op-shop"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6089,
+          -43.4949
+        ]
+      },
+      "properties": {
+        "id": "st-john-main-north-rd",
+        "name": "St John Opportunity Shop – Main North Road",
+        "address": "43 Main North Road, Papanui, Christchurch",
+        "hours": "Mon–Fri 9:30am–5pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Charity",
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://www.stjohn.org.nz/shop/retail-stores/christchurch-papanui/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.6224,
+          -43.5127
+        ]
+      },
+      "properties": {
+        "id": "to-be-continued-merivale",
+        "name": "To Be Continued Preloved",
+        "address": "182 Papanui Road, Merivale, Christchurch",
+        "hours": "Mon–Fri 9:30am–5:30pm, Sat 9:30am–5pm, Sun 10am–3pm",
+        "categories": [
+          "Clothing",
+          "Vintage"
+        ],
+        "source": "https://tobecontinuedpreloved.com/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5868,
+          -43.4898
+        ]
+      },
+      "properties": {
+        "id": "silver-boutique-bishopdale",
+        "name": "Silver Boutique",
+        "address": "Shop 11C, Bishopdale Court, Bishopdale Mall, Bishopdale, Christchurch",
+        "hours": "Mon–Fri 10am–4:30pm, Sat 10am–4pm, closed Sun",
+        "categories": [
+          "Clothing",
+          "Toys",
+          "Homewares",
+          "Books"
+        ],
+        "source": "https://www.neighbourly.co.nz/business/silver-boutique"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          172.5868,
+          -43.4894
+        ]
+      },
+      "properties": {
+        "id": "my-favourite-things-bishopdale",
+        "name": "My Favourite Things",
+        "address": "Shop 17D, Bishopdale Court, Bishopdale Mall, Bishopdale, Christchurch",
+        "hours": "Check current hours before visiting",
+        "categories": [
+          "Clothing",
+          "Homewares",
+          "Miscellaneous"
+        ],
+        "source": "https://myfavthings.co.nz/"
       }
     }
   ]
