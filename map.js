@@ -52,6 +52,10 @@ shops.forEach(shop => {
     shop.openDays = parseOpenDays(shop.hours);
 });
 
+// Sort alphabetically once up front so the list has a predictable order,
+// rather than whatever order the shops happened to be added in.
+shops.sort((a, b) => a.name.localeCompare(b.name));
+
 const todayAbbrev = WEEKDAYS[new Date().getDay()];
 
 const map = L.map('map').setView([-43.532, 172.636], 12);
@@ -69,6 +73,7 @@ const todayButton = document.getElementById('todayButton');
 const resetButton = document.getElementById('resetButton');
 const shopList = document.getElementById('shopList');
 const count = document.getElementById('count');
+const activeFilters = document.getElementById('activeFilters');
 
 // Build the HTML shown inside a marker's popup when it's clicked on the map.
 function createPopup(shop) {
@@ -90,6 +95,20 @@ function createPopup(shop) {
             <a href="${shop.source}" target="_blank" rel="noopener">Visit website</a>
         </p>
     </div>`;
+}
+
+// Marks one shop card as selected and scrolls it into view, then clears
+// that state from every other card. Used to keep the list in sync with
+// whichever marker is currently open on the map.
+function highlightShopCard(shopId) {
+    document.querySelectorAll('.shop-card').forEach(card => {
+        card.classList.toggle('active', card.dataset.shopId === shopId);
+    });
+
+    const activeCard = shopList.querySelector(`[data-shop-id="${shopId}"]`);
+    if (activeCard) {
+        activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
 }
 
 // Re-reads the search box, category filter and day filter, then rebuilds
@@ -120,8 +139,13 @@ function renderShops() {
             const marker = L.marker([shop.lat, shop.lng]).addTo(markerLayer);
             marker.bindPopup(createPopup(shop));
 
+            // Clicking a marker directly on the map highlights and scrolls
+            // to its card in the list, so the two stay in sync either way.
+            marker.on('click', () => highlightShopCard(shop.id));
+
             const card = document.createElement('article');
             card.className = 'shop-card';
+            card.dataset.shopId = shop.id;
 
             const openTodayBadge = shop.openDays.includes(todayAbbrev)
                 ? '<span class="badge badge-today">Open today</span>'
@@ -141,6 +165,7 @@ function renderShops() {
             card.addEventListener('click', () => {
                 map.flyTo([shop.lat, shop.lng], 15);
                 marker.openPopup();
+                highlightShopCard(shop.id);
             });
 
             shopList.appendChild(card);
@@ -148,7 +173,46 @@ function renderShops() {
     });
 
     count.textContent = `${visible} of ${shops.length} shops`;
+    renderActiveFilters();
 }
+
+// Shows a removable chip for each filter that's currently active, so it's
+// clear at a glance what's narrowing the list down without having to
+// check each dropdown individually.
+function renderActiveFilters() {
+    const chips = [];
+
+    if (searchInput.value.trim() !== '') {
+        chips.push({ type: 'search', label: `"${searchInput.value.trim()}"` });
+    }
+    if (categoryFilter.value !== 'all') {
+        chips.push({ type: 'category', label: categoryFilter.value });
+    }
+    if (dayFilter.value !== 'all') {
+        const dayLabel = dayFilter.options[dayFilter.selectedIndex].textContent;
+        chips.push({ type: 'day', label: dayLabel });
+    }
+
+    activeFilters.innerHTML = chips.map(chip => `
+        <span class="filter-chip">
+            ${chip.label}
+            <button type="button" data-clear="${chip.type}" aria-label="Clear this filter">&times;</button>
+        </span>
+    `).join('');
+}
+
+// One listener on the container handles every chip's clear button,
+// rather than adding a new listener each time renderActiveFilters runs.
+activeFilters.addEventListener('click', event => {
+    const filterType = event.target.dataset.clear;
+    if (!filterType) return;
+
+    if (filterType === 'search') searchInput.value = '';
+    if (filterType === 'category') categoryFilter.value = 'all';
+    if (filterType === 'day') dayFilter.value = 'all';
+
+    renderShops();
+});
 
 searchInput.addEventListener('input', renderShops);
 categoryFilter.addEventListener('change', renderShops);

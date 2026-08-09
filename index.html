@@ -38,7 +38,10 @@
             second-hand treasures, helping you discover more places to browse,
             reuse and find something unexpected.
         </p>
-        <a class="cta" href="#map-section">Explore the map</a>
+        <div class="hero-actions">
+            <a class="cta" href="#map-section">Explore the map</a>
+            <a class="cta-secondary" href="about.html">Read our story</a>
+        </div>
     </div>
 </header>
 
@@ -79,6 +82,9 @@
         <button id="resetButton">Reset</button>
         <span id="count"></span>
     </div>
+
+    <!-- Shows a removable chip for each active search/category/day filter -->
+    <div id="activeFilters" class="active-filters"></div>
 
     <!-- Shop list (left) and Leaflet map (right); both are filled in by renderShops() -->
     <div class="map-layout">
@@ -155,5 +161,5 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="map.js"></script>
 <script src="scroll-top.js"></script>
-</body>
+<script src="nav.js"></script></body>
 </html>
