@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog - Christchurch Op Shop Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,29 +22,161 @@
     </div>
 </nav>
 
-<!-- Blog: a simple starter listing of posts, styled the same as the tips cards -->
+<!-- Blog: a stacked feed of posts, newest at the top, like a forum thread -->
 <section id="blog">
     <div class="section-heading">
         <div class="eyebrow" style="color:#286452;">FROM THE BLOG</div>
         <h2>Stories, finds and guides.</h2>
         <p>Updates from around Christchurch's op-shopping scene.</p>
     </div>
-    <div class="feature-grid">
-        <div class="info-card">
-            <span class="post-date">Coming soon</span>
-            <h3>Five tips for first-time op shoppers</h3>
-            <p>What to look for, what to skip, and how to make the most of your first visit.</p>
-        </div>
-        <div class="info-card">
+
+    <!-- Latest headlines, pulled live from a Google News RSS search via a
+         free RSS-to-JSON proxy (no API key needed for this volume of use) -->
+    <div class="news-widget">
+        <h3>Latest secondhand &amp; sustainability news</h3>
+        <ul id="newsList">
+            <li>Loading latest headlines&hellip;</li>
+        </ul>
+    </div>
+
+    <div class="blog-feed">
+        <article class="blog-post blog-post-featured">
+            <span class="post-date">Op Shop of the Month</span>
+            <h3>Dogwatch Variety Shop, New Brighton</h3>
+            <div class="blog-post-body">
+                <img class="blog-post-image" src="images/vaccinationevent.jpg" alt="Dogwatch's vaccination event in New Brighton">
+                <div class="blog-post-text collapsible">
+                    <p>
+                        Our Op Shop of the Month is Dogwatch Variety Shop in New Brighton.
+                        It's tucked into one of Christchurch's more overlooked op-shopping
+                        pockets, out where the streets start smelling like salt air, and
+                        it's exactly the kind of shop that rewards people willing to make
+                        the trip rather than sticking to the central suburbs.
+                    </p>
+                    <p>
+                        Prices here are consistently reasonable across the board, whether
+                        you're after clothing, books, homewares or one of the odder
+                        miscellaneous finds that tend to turn up on the shelves. Nothing
+                        feels marked up for the sake of it, which makes Dogwatch the kind
+                        of shop you can drop into regularly rather than saving it up for a
+                        special occasion. It rewards a proper look too — the stock turns
+                        over often enough that a quiet visit one week can be followed by a
+                        genuinely good haul the next.
+                    </p>
+                    <p>
+                        What really sets Dogwatch apart, though, is how much it gives back
+                        beyond the shop floor. It's recently run two huge vaccination
+                        events for the community, giving away free dog food, vaccines and
+                        wormer to local pet owners. Events like that aren't just a nice
+                        gesture — for plenty of pet owners, keeping up with vaccinations and
+                        parasite control is a real cost, and having a local shop step in and
+                        cover that gap makes a genuine difference. It says a lot about a
+                        shop when its impact on the area goes well beyond what's on the
+                        racks.
+                    </p>
+                    <p>
+                        If you're already out that way, it's worth pairing a visit with a
+                        walk along New Brighton's pier or beach — it turns a quick op-shop
+                        stop into a proper afternoon out. Between the fair prices, the
+                        steady stream of fresh stock, and the community work happening
+                        alongside it, Dogwatch is always worth a visit.
+                    </p>
+                    <p><a href="index.html#map-section">Find Dogwatch on the map &rarr;</a></p>
+                </div>
+                <button class="read-more-btn" type="button">Read more</button>
+            </div>
+            <div class="blog-gallery">
+                <img src="images/dogwatchlogo.jpg" alt="Dogwatch Variety Shop logo">
+                <img src="images/dogwatch2.jpg" alt="Inside Dogwatch Variety Shop">
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <span class="post-date">Community stories</span>
+            <h3>Why I Love Op Shopping</h3>
+            <div class="blog-post-body">
+                <img class="blog-post-image" src="images/table.jpg" alt="A restored Lazy Susan table found op shopping">
+                <div class="blog-post-text collapsible">
+                    <p>
+                        For me, op shopping has always been about the hunt for a bargain.
+                        Growing up without a lot of money, buying secondhand was something
+                        I was used to. It meant I could find interesting things without
+                        having to spend a lot, and I still get that same excitement now
+                        when I find something that feels like a bargain.
+                    </p>
+                    <p>
+                        These days, I don't just look at op shops for clothes. I love
+                        looking through the furniture and homeware sections because you
+                        never really know what you're going to find.
+                    </p>
+                    <p>
+                        One of my favourite things I've found and worked on has been
+                        <strong>Lazy Susans</strong>. They might not sound particularly
+                        exciting, but I love finding pieces like this because they have
+                        so much potential. Something that looks old, dated or a little
+                        unloved can sometimes be transformed into something that actually
+                        fits your home and your style.
+                    </p>
+                    <p>
+                        I also like that you don't necessarily need to be an expert to get
+                        started with furniture restoration. There are so many tutorials
+                        available online now that you can learn as you go — cleaning,
+                        sanding, painting, repairing and refreshing old furniture — so
+                        even if you've never restored anything before, you can start with
+                        a small project and see how you go.
+                    </p>
+                    <p>
+                        That's part of what makes op shopping so appealing to me. I don't
+                        necessarily need something to be perfect when I buy it. I'm more
+                        interested in whether I can see what it could become.
+                    </p>
+                    <p>
+                        For me, that's the fun of op shopping. It's not about walking into
+                        a shop knowing exactly what I'm going to buy. It's about having a
+                        look around, spotting something interesting and thinking,
+                        "I could do something with that." And when you find it for a
+                        bargain price, even better.
+                    </p>
+                </div>
+                <button class="read-more-btn" type="button">Read more</button>
+            </div>
+        </article>
+
+        <article class="blog-post">
+            <span class="post-date">External read, via RNZ</span>
+            <h3>The impact buying second-hand has on communities</h3>
+            <p>
+                A look at just how much New Zealand's op shops give back — a recent
+                report estimated the sector reinvests around $78 million into
+                communities each year, keeps over 41,000 tonnes of goods out of
+                landfill, and supports thousands of paid and volunteer roles nationwide.
+            </p>
+            <p><a href="https://www.rnz.co.nz/life/lifestyle/the-impact-buying-second-hand-has-on-communities" target="_blank" rel="noopener">Read the full article on RNZ &rarr;</a></p>
+        </article>
+
+        <article class="blog-post">
+            <span class="post-date">External read, via RNZ</span>
+            <h3>Seven solid gold tips for thrifting</h3>
+            <p>
+                A practical rundown of thrifting strategy from writer Nat Dudley —
+                covering how to prep before you go, staying open-minded about sizing
+                and colour, why small regular visits beat one big trip, and how
+                patience with a crammed rack tends to pay off.
+            </p>
+            <p><a href="https://www.rnz.co.nz/summer-2020/money-and-finance/seven-solid-gold-tips-for-thrifting" target="_blank" rel="noopener">Read the full article on RNZ &rarr;</a></p>
+        </article>
+
+        <article class="blog-post">
             <span class="post-date">Coming soon</span>
             <h3>Spotlight: New Brighton's op shop scene</h3>
             <p>A closer look at one of Christchurch's more overlooked second-hand shopping areas.</p>
-        </div>
-        <div class="info-card">
+        </article>
+
+        <article class="blog-post">
             <span class="post-date">Coming soon</span>
             <h3>How to spot quality second-hand furniture</h3>
             <p>A few simple checks that tell you whether a piece is worth taking home.</p>
-        </div>
+        </article>
     </div>
 </section>
 
@@ -49,6 +184,77 @@
 <footer>
     <strong>Christchurch Op Shop Guide</strong>
 </footer>
+
+<script>
+// Long posts start truncated (see the .collapsible CSS); clicking the
+// button toggles the "expanded" class and swaps the button's label.
+document.querySelectorAll('.read-more-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const text = button.closest('.blog-post-body').querySelector('.blog-post-text');
+        const isExpanded = text.classList.toggle('expanded');
+        button.textContent = isExpanded ? 'Show less' : 'Read more';
+    });
+});
+
+// Estimate reading time for each post from its word count, and show it
+// next to the post's date badge (e.g. "Op Shop of the Month · 2 min read").
+function addReadingTimes() {
+    const WORDS_PER_MINUTE = 200;
+
+    document.querySelectorAll('.blog-post').forEach(post => {
+        const text = Array.from(post.querySelectorAll('p'))
+            .map(p => p.textContent)
+            .join(' ');
+
+        const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+        const minutes = Math.max(1, Math.round(wordCount / WORDS_PER_MINUTE));
+
+        const dateBadge = post.querySelector('.post-date');
+        if (dateBadge) {
+            dateBadge.textContent += ` · ${minutes} min read`;
+        }
+    });
+}
+
+addReadingTimes();
+
+// Latest headlines: a Google News RSS search for secondhand/op-shop related
+// stories, converted to JSON via rss2json's free public endpoint since
+// browsers can't parse RSS/XML from another site directly (no API key
+// needed at this scale, though rss2json does offer a free key for
+// higher limits if this ever gets rate-limited).
+const NEWS_RSS_FEED = 'https://news.google.com/rss/search?q=op+shop+OR+secondhand+OR+thrift+New+Zealand&hl=en-NZ&gl=NZ&ceid=NZ:en';
+const NEWS_API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(NEWS_RSS_FEED)}`;
+const newsList = document.getElementById('newsList');
+
+fetch(NEWS_API_URL)
+    .then(response => response.json())
+    .then(data => {
+        if (data.status !== 'ok' || !data.items.length) {
+            newsList.innerHTML = '<li>No headlines available right now.</li>';
+            return;
+        }
+
+        // Only show the 5 most recent headlines, as a link out to the
+        // original source rather than the full article — same approach
+        // as the RNZ posts further down this page.
+        const headlines = data.items.slice(0, 5);
+
+        newsList.innerHTML = headlines.map(item => {
+            const published = new Date(item.pubDate).toLocaleDateString('en-NZ', {
+                day: 'numeric', month: 'short', year: 'numeric'
+            });
+
+            return `<li>
+                <a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
+                <span class="news-date">${published}</span>
+            </li>`;
+        }).join('');
+    })
+    .catch(() => {
+        newsList.innerHTML = "<li>Couldn't load headlines right now — try again later.</li>";
+    });
+</script>
 
 </body>
 </html>

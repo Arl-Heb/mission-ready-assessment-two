@@ -8,6 +8,14 @@ body {
     background:#f7f5ef;
     line-height:1.6;
 }
+/* Headings use a warmer serif (loaded via Google Fonts in each page's
+   <head>) instead of the body's plain sans-serif, for more editorial feel */
+h1, h2, h3 { font-family:'Playfair Display', Georgia, serif; }
+/* Default link styling: brand green instead of the browser's default blue,
+   with the underline only appearing on hover. Nav links, the hero button
+   and card links override this further down with their own colors. */
+a { color:#173f35; text-decoration:none; }
+a:hover { color:#286452; text-decoration:underline; }
 /* Sticky top navigation */
 nav {
     position:sticky;
@@ -77,6 +85,18 @@ h1 { font-size:clamp(42px,7vw,78px); line-height:1.02; margin:15px 0 20px; }
 section { padding:80px 7%; }
 .section-heading { max-width:720px; margin-bottom:35px; }
 .section-heading h2 { font-size:38px; line-height:1.1; margin:8px 0 12px; }
+/* Full-width lead image on the About/Tips pages, scaled to fit
+   without cropping */
+.section-image {
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:420px;
+    border-radius:16px;
+    box-shadow:0 6px 25px rgba(0,0,0,.06);
+    margin:0 auto 32px;
+}
 .about-grid {
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -87,6 +107,11 @@ section { padding:80px 7%; }
     background:white;
     border-radius:16px;
     box-shadow:0 6px 25px rgba(0,0,0,.06);
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+.info-card:hover {
+    transform:translateY(-4px);
+    box-shadow:0 14px 34px rgba(0,0,0,.10);
 }
 /* Interactive map section */
 .map-section { background:#ece9df; }
@@ -144,17 +169,130 @@ button {
 }
 #map { height:620px; }
 
-/* Tips and blog card grids */
+/* Tips card grid */
 .feature-grid {
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 .post-date {
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:99px;
+    background:#e4eee9;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    color:#286452;
+    margin-bottom:10px;
+}
+
+/* Blog feed: a single stacked column, newest post first, like a forum thread */
+.blog-feed {
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+}
+.blog-post {
+    background:white;
+    padding:32px;
+    border-radius:16px;
+    box-shadow:0 6px 25px rgba(0,0,0,.06);
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+.blog-post:hover {
+    transform:translateY(-4px);
+    box-shadow:0 14px 34px rgba(0,0,0,.10);
+}
+.blog-post h3 { font-size:26px; margin:0 0 14px; }
+/* Extra visual weight for the featured "Op Shop of the Month" post */
+.blog-post-featured {
+    border-left:5px solid #286452;
+    background:linear-gradient(135deg, #ffffff 0%, #f2f7f4 100%);
+}
+/* Image and text sit side by side, wrapping to stacked on narrow screens */
+.blog-post-body {
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    align-items:flex-start;
+    margin:14px 0;
+}
+.blog-post-image {
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:320px;
+    max-height:320px;
+    border-radius:12px;
+}
+.blog-post-text { flex:1 1 260px; }
+.blog-post-text p:first-child { margin-top:0; }
+/* Long posts start truncated with a fade, and expand on "Read more" */
+.blog-post-text.collapsible {
+    max-height:150px;
+    overflow:hidden;
+    position:relative;
+}
+.blog-post-text.collapsible::after {
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:50px;
+    background:linear-gradient(to bottom, rgba(255,255,255,0), white);
+}
+.blog-post-text.collapsible.expanded {
+    max-height:none;
+}
+.blog-post-text.collapsible.expanded::after {
+    display:none;
+}
+.read-more-btn {
+    display:block;
+    margin-top:12px;
+    padding:0;
+    background:none;
+    border:none;
+    color:#173f35;
+    font-weight:bold;
+    text-decoration:underline;
+    cursor:pointer;
+}
+.blog-gallery {
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:16px;
+}
+.blog-gallery img {
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:220px;
+    border-radius:8px;
+}
+
+/* Live news widget at the top of the blog page */
+.news-widget {
+    background:white;
+    padding:24px 28px;
+    border-radius:16px;
+    box-shadow:0 6px 25px rgba(0,0,0,.06);
+    margin-bottom:24px;
+}
+.news-widget h3 { margin-top:0; }
+.news-widget ul { list-style:none; margin:0; padding:0; }
+.news-widget li {
+    padding:10px 0;
+    border-bottom:1px solid #e7e7e7;
+}
+.news-widget li:last-child { border-bottom:none; }
+.news-widget .news-date {
     display:block;
     font-size:12px;
     color:#5b6560;
-    margin-bottom:6px;
+    margin-top:2px;
 }
 
 /* Suggest-a-shop form: full-width landscape layout so it matches the
