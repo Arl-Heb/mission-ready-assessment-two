@@ -356,6 +356,34 @@ footer {
     filter:invert(1);
 }
 
+/* Floating "back to top" button, hidden until scroll-top.js reveals it */
+.scroll-top-btn {
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#173f35;
+    color:white;
+    border:none;
+    font-size:20px;
+    line-height:1;
+    cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,.2);
+    opacity:0;
+    transform:translateY(10px);
+    pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease, background .2s ease;
+    z-index:900;
+}
+.scroll-top-btn.visible {
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+.scroll-top-btn:hover { background:#286452; }
+
 /* Responsive layout for tablet/mobile screens */
 @media(max-width:850px) {
     nav div:last-child { display:none; }
