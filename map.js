@@ -58,7 +58,16 @@ shops.sort((a, b) => a.name.localeCompare(b.name));
 
 const todayAbbrev = WEEKDAYS[new Date().getDay()];
 
-const map = L.map('map').setView([-43.532, 172.636], 12);
+// Keeps the map locked to the Christchurch area - covers all the shops
+// with some room to pan around, but stops people dragging/zooming their
+// way out to somewhere else entirely.
+const CHCH_BOUNDS = L.latLngBounds([-43.75, 172.35], [-43.35, 172.9]);
+
+const map = L.map('map', {
+    maxBounds: CHCH_BOUNDS,
+    maxBoundsViscosity: 1.0,
+    minZoom: 11
+}).setView([-43.532, 172.636], 12);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -97,9 +106,9 @@ function createPopup(shop) {
     </div>`;
 }
 
-// Marks one shop card as selected and scrolls it into view, then clears
-// that state from every other card. Used to keep the list in sync with
-// whichever marker is currently open on the map.
+// Marks one shop card as selected and smooth-scrolls it into view, then
+// clears that state from every other card. Used to keep the list in sync
+// with whichever marker is currently open on the map.
 function highlightShopCard(shopId) {
     document.querySelectorAll('.shop-card').forEach(card => {
         card.classList.toggle('active', card.dataset.shopId === shopId);
@@ -233,14 +242,10 @@ resetButton.addEventListener('click', () => {
 
 renderShops();
 
-// Suggest-a-shop form: validates the required fields, then hands the
-// details off as a pre-filled email rather than a real database, since
-// this is a static site with no backend to store submissions in.
-// Intentionally a fake address — this is coursework, not a live deployment,
-// so there's no real inbox to send suggestions to. If this site were ever
-// actually deployed, this would be swapped for a real contact email.
-const SUBMISSION_EMAIL = 'fakeemail123';
-
+// Suggest-a-shop form: validates the required fields and shows a thank-you
+// message. This is a static site with no backend, so there's nowhere to
+// actually send the suggestion to yet - it's here to demonstrate the
+// validation and events rather than to collect real submissions.
 const suggestForm = document.getElementById('suggestForm');
 const suggestStatus = document.getElementById('suggestStatus');
 const emailPattern = /^\S+@\S+\.\S+$/;
@@ -261,9 +266,7 @@ suggestForm.addEventListener('submit', event => {
 
     const name = document.getElementById('suggestName').value.trim();
     const address = document.getElementById('suggestAddress').value.trim();
-    const category = document.getElementById('suggestCategory').value;
     const email = document.getElementById('suggestEmail').value.trim();
-    const notes = document.getElementById('suggestNotes').value.trim();
 
     let hasError = false;
 
@@ -284,18 +287,6 @@ suggestForm.addEventListener('submit', event => {
 
     if (hasError) return;
 
-    const subject = `Op shop suggestion: ${name}`;
-    const body = [
-        `Shop name: ${name}`,
-        `Address/suburb: ${address}`,
-        `Category: ${category || 'Not sure'}`,
-        `Notes: ${notes || 'None'}`,
-        `Submitted by: ${email || 'Not provided'}`
-    ].join('\n');
-
-    window.location.href =
-        `mailto:${SUBMISSION_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
     suggestForm.reset();
-    suggestStatus.textContent = "Thanks! Your suggestion has been opened in your email app — send it through and we'll take a look.";
+    suggestStatus.textContent = "Thanks for the suggestion — we'll have a look!";
 });
