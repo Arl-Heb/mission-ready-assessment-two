@@ -98,20 +98,6 @@ h1 { font-size:clamp(42px,7vw,78px); line-height:1.02; margin:15px 0 20px; }
     text-decoration:none;
     font-weight:bold;
 }
-.cta-secondary {
-    display:inline-block;
-    padding:11px 20px;
-    border-radius:8px;
-    border:2px solid white;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-.cta-secondary:hover {
-    background:rgba(255,255,255,.1);
-    color:white;
-    text-decoration:none;
-}
 /* Shared section spacing, headings and info cards (used across
    the homepage, about, tips and blog pages) */
 section { padding:80px 7%; }
