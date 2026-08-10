@@ -114,6 +114,7 @@ h1 { font-size:clamp(42px,7vw,78px); line-height:1.02; margin:15px 0 20px; }
 section { padding:80px 7%; }
 .section-heading { max-width:720px; margin-bottom:35px; }
 .section-heading h2 { font-size:38px; line-height:1.1; margin:8px 0 12px; }
+.map-disclaimer { font-size:13px; color:#5b6560; margin-top:6px; }
 /* Row of photos above the About page's info cards */
 .photo-row {
     display:grid;
