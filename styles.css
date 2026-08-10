@@ -109,6 +109,11 @@ h1 { font-size:clamp(42px,7vw,78px); line-height:1.02; margin:15px 0 20px; }
     text-decoration:none;
     font-weight:bold;
 }
+.cta:hover {
+    background:#e4eee9;
+    color:#173f35;
+    text-decoration:none;
+}
 /* Shared section spacing, headings and info cards (used across
    the homepage, about, tips and blog pages) */
 section { padding:80px 7%; }
@@ -167,6 +172,7 @@ button {
     border-color:#173f35;
     cursor:pointer;
 }
+button:hover { background:#286452; }
 #count { margin-left:auto; font-weight:bold; }
 /* Removable chips showing which filters are currently active */
 .active-filters {
@@ -197,6 +203,7 @@ button {
     padding:2px 6px;
     cursor:pointer;
 }
+.filter-chip button:hover { background:none; }
 .map-layout {
     display:grid;
     grid-template-columns:340px 1fr;
@@ -236,12 +243,6 @@ button {
 }
 #map { height:620px; }
 
-/* Tips card grid */
-.feature-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
 .post-date {
     display:inline-block;
     padding:4px 12px;
@@ -469,7 +470,7 @@ footer {
     }
     .nav-links.open { display:flex; }
     .nav-links a { margin-left:0; }
-    .about-grid,.feature-grid,.map-layout,.form-grid { grid-template-columns:1fr; }
+    .about-grid,.map-layout,.form-grid { grid-template-columns:1fr; }
     .photo-row { grid-template-columns:repeat(2,1fr); }
     #shopList { height:300px; order:2; }
     #map { height:500px; order:1; }
