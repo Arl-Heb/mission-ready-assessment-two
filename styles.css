@@ -43,6 +43,17 @@ nav {
 nav a { color:white; text-decoration:none; margin-left:22px; font-size:14px; }
 /* Marks whichever nav link matches the current page (see nav.js) */
 nav a.active { font-weight:bold; text-decoration:underline; text-underline-offset:4px; }
+/* Hidden on desktop - only turned on inside the mobile media query below */
+.nav-toggle {
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+    padding:4px 6px;
+}
 
 /* Hero banner: a video sits behind the text, with a gradient overlay
    on top so the white text stays readable over the footage. */
@@ -444,7 +455,19 @@ footer {
 
 /* Responsive layout for tablet/mobile screens */
 @media(max-width:850px) {
-    nav div:last-child { display:none; }
+    nav { flex-wrap:wrap; }
+    .nav-toggle { display:block; }
+    /* Nav links become a hamburger dropdown instead of just disappearing,
+       since most visitors will be on their phones */
+    .nav-links {
+        display:none;
+        width:100%;
+        flex-direction:column;
+        gap:14px;
+        margin-top:15px;
+    }
+    .nav-links.open { display:flex; }
+    .nav-links a { margin-left:0; }
     .about-grid,.feature-grid,.map-layout,.form-grid { grid-template-columns:1fr; }
     .photo-row { grid-template-columns:repeat(2,1fr); }
     #shopList { height:300px; order:2; }

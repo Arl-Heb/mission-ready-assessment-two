@@ -15,7 +15,10 @@
 <!-- Sticky navigation, shared across every page on the site aka it meant that the menu will always be visible at the top of the page -->
 <nav>
     <a class="logo" href="index.html">CHCH OP SHOP GUIDE</a>
-    <div>
+    <!-- Hamburger button, only shows up on small screens - most people are
+         browsing on their phones so the nav links needed a mobile option -->
+    <button id="navToggle" class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    <div class="nav-links">
         <a href="index.html#map-section">Map</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
