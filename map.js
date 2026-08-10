@@ -9,15 +9,18 @@ const DAY_TOKEN = /(Sun|Mon|Tue|Wed|Thu|Fri|Sat)/;
 // Turn a free-text hours string (e.g. "Mon–Fri 9am–4:30pm; Sat 10am–3pm")
 // into an array of the day abbreviations a shop is open on.
 function parseOpenDays(hoursText) {
-    if (/daily/i.test(hoursText)) {
+    if (/daily|7 days/i.test(hoursText)) {
         return [...WEEKDAYS];
     }
 
     const openDays = [];
 
-    // Shops can list several clauses separated by semicolons,
-    // e.g. "Mon–Fri 9am–4:30pm; Sat 10am–3pm; Sun 11am–3pm".
-    const clauses = hoursText.split(';');
+    // Shops list several clauses separated by semicolons or commas,
+    // e.g. "Mon–Fri 9am–4:30pm; Sat 10am–3pm" or
+    // "Mon–Fri 9:30am–5pm, Sat 10am–4pm, closed Sun". Splitting on both
+    // matters here - otherwise a trailing "closed Sun" dragged the whole
+    // comma-joined clause down with it and wiped out the valid days too.
+    const clauses = hoursText.split(/[;,]/);
 
     clauses.forEach(clause => {
         // Skip clauses that explicitly say a day is closed.
@@ -53,14 +56,14 @@ shops.forEach(shop => {
 });
 
 // Sort alphabetically once up front so the list has a predictable order,
-// rather than whatever order the shops happened to be added in.
+// rather than whatever order the shops happened to be added in, better ux
 shops.sort((a, b) => a.name.localeCompare(b.name));
 
 const todayAbbrev = WEEKDAYS[new Date().getDay()];
 
 // Keeps the map locked to the Christchurch area - covers all the shops
 // with some room to pan around, but stops people dragging/zooming their
-// way out to somewhere else entirely.
+// way out to somewhere else entirely, providing better ux or people accidently going too far away 
 const CHCH_BOUNDS = L.latLngBounds([-43.75, 172.35], [-43.35, 172.9]);
 
 const map = L.map('map', {
