@@ -236,7 +236,10 @@ renderShops();
 // Suggest-a-shop form: validates the required fields, then hands the
 // details off as a pre-filled email rather than a real database, since
 // this is a static site with no backend to store submissions in.
-const SUBMISSION_EMAIL = 'fakeemail123'; // TODO: replace with the address you want suggestions sent to
+// Intentionally a fake address — this is coursework, not a live deployment,
+// so there's no real inbox to send suggestions to. If this site were ever
+// actually deployed, this would be swapped for a real contact email.
+const SUBMISSION_EMAIL = 'fakeemail123';
 
 const suggestForm = document.getElementById('suggestForm');
 const suggestStatus = document.getElementById('suggestStatus');
